@@ -12,6 +12,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Logging middleware
+const logger = require('./middleware/logger');
+app.use(logger);
+
 // Routes
 app.use('/api/products', productRoutes);
 
