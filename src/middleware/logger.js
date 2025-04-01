@@ -12,6 +12,8 @@ const logStream = fs.createWriteStream(
     { flags: 'a' }
 );
 
+const opentelemetry = require('@opentelemetry/api');
+
 const logger = (req, res, next) => {
     const start = Date.now();
     const originalSend = res.send;
